@@ -10,6 +10,107 @@
     <section class="Products bg-white">
         <div class="container mx-auto px-8 py-20 text-center">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header class="flex items-center flex-col">
+        <div class="flex justify-between items-center px-4 md:px-6 w-full bg-gray-900 h-[64px]">
+            <h1 class="text-white text-xl font-bold">
+                FullStack-B
+            </h1>
+            <nav class="hidden gap-6 md:flex">
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">Home</a>
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">Products</a>
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">About</a>
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">Contact Us</a>
+            </nav>
+            <div class="hidden gap-2 md:flex">
+                <input type="text" placeholder="Search..."
+                    class="bg-gray-800 w-48 px-2 rounded-md border border-gray-700 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button class="flex items-center gap-1 text-gray-300 border border-gray-600 rounded-md px-3 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                    search</button>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white" id="menuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-menu">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="w-full bg-gray-800 px-4 pb-4 pt-2 md:hidden" id="menuPanel">
+            <nav class="flex flex-col items-start gap-3 md:hidden">
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">Home</a>
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">Contact Us</a>
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">Products</a>
+                <a href="#" class="text-gray-300 text-sm active:text-indigo-400 hover:text-white">About</a>
+            </nav>
+            <div class="flex gap-2 md:hidden mt-4">
+                <input type="text" placeholder="Search..."
+                    class="bg-gray-700 w-full px-2 rounded-md border border-gray-600 text-sm placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button class="bg-indigo-600 rounded-md px-3 py-1 text-white hover:bg-indigo-700 transition-colors">
+                    Go
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="flex flex-col lg:flex-row gap-12 items-center py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="flex-1">
+            <h2 class="text-5xl text-gray-900 font-bold mb-4">Welcome to <span class="text-indigo-600">FullStack-B</span></h2>
+            <p class="text-lg text-gray-600 mb-8">Discover amazing products and services tailored to your needs. Start your journey with us today.</p>
+            <button class="bg-indigo-600 rounded-lg px-5 py-3 text-white hover:bg-indigo-700 transition-colors font-bold">
+                Get Started
+            </button>
+        </div>
+        <div class="flex-1">
+            <img src="./hero-photo.jpg" class="rounded-2xl object-cover">
+        </div>
+    </section>
+    <script>
+        const menuBtn = document.querySelector("#menuBtn");
+        const menuPanel = document.querySelector("#menuPanel");
+
+        menuBtn.addEventListener("click", () => {
+            menuPanel.classList.toggle("hidden");
+
+            if (menuPanel.classList.contains("hidden")) {
+                
+                menuBtn.innerHTML=`
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-menu">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>`;
+            } else {
+                menuBtn.innerHTML=`
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-x">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>`;
+            }
+
+        });
+    </script>
+</body>
+
+</html>
+
             <h2 class="text-3xl font-bold mb-12">Our Products</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
                 <div class="border rounded-2xl border-gray-200 p-8 shadow-sm hover:shadow-md">
