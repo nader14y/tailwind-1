@@ -78,40 +78,8 @@
             <img src="./hero-photo.jpg" class="rounded-2xl object-cover">
         </div>
     </section>
-    <script>
-        const menuBtn = document.querySelector("#menuBtn");
-        const menuPanel = document.querySelector("#menuPanel");
 
-        menuBtn.addEventListener("click", () => {
-            menuPanel.classList.toggle("hidden");
-
-            if (menuPanel.classList.contains("hidden")) {
-                
-                menuBtn.innerHTML=`
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-menu">
-                    <line x1="4" x2="20" y1="12" y2="12"></line>
-                    <line x1="4" x2="20" y1="6" y2="6"></line>
-                    <line x1="4" x2="20" y1="18" y2="18"></line>
-                </svg>`;
-            } else {
-                menuBtn.innerHTML=`
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-x">
-                    <path d="M18 6 6 18"></path>
-                    <path d="m6 6 12 12"></path>
-                </svg>`;
-            }
-
-        });
-    </script>
-</body>
-
-</html>
-
-            <h2 class="text-3xl font-bold mb-12">Our Products</h2>
+    <h2 class="text-3xl font-bold mb-12">Our Products</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
                 <div class="border rounded-2xl border-gray-200 p-8 shadow-sm hover:shadow-md">
                     <h3 class="text-lg font-semibold mb-1">Premium Plan</h3>
@@ -188,8 +156,34 @@
                 </div>
             </div>
         </div>
-    </section>
+    <script>
+        const menuBtn = document.querySelector("#menuBtn");
+        const menuPanel = document.querySelector("#menuPanel");
 
-    
+        menuBtn.addEventListener("click", () => {
+            menuPanel.classList.toggle("hidden");
+
+            if (menuPanel.classList.contains("hidden")) {
+                
+                menuBtn.innerHTML=`
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-menu">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>`;
+            } else {
+                menuBtn.innerHTML=`
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-x">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>`;
+            }
+
+        });
+    </script>
   </body>
 </html>
